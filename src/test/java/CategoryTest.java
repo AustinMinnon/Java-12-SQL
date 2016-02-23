@@ -11,25 +11,25 @@ public class CategoryTest {
     assertEquals(Category.all().size(), 0);
   }
 
-  // @Test
-  // public void equals_returnsTrueIfNamesAretheSame() {
-  //   Category firstCategory = new Category("Household chores");
-  //   Category secondCategory = new Category("Household chores");
-  //   assertTrue(firstCategory.equals(secondCategory));
-  // }
-  //
-  // @Test
-  // public void save_savesIntoDatabase_true() {
-  //   Category myCategory = new Category("Household chores");
-  //   myCategory.save();
-  //   assertTrue(Category.all().get(0).equals(myCategory));
-  // }
-  //
-  // @Test
-  // public void find_findCategoryInDatabase_true() {
-  //   Category myCategory = new Category("Household chores");
-  //   myCategory.save();
-  //   Category savedCategory = Category.find(myCategory.getId());
-  //   assertTrue(myCategory.equals(savedCategory));
-  // }
+  @Test
+  public void equals_returnsTrueIfNamesAretheSame() {
+    Category firstCategory = new Category("Household chores");
+    Category secondCategory = new Category("Household chores");
+    assertTrue(firstCategory.equals(secondCategory));
+  }
+
+  @Test
+  public void save_savesIntoDatabase_true() {
+    Category myCategory = new Category("Household chores");
+    myCategory.save();
+    assertTrue(Category.all().get(0).equals(myCategory));
+  }
+
+  @Test
+  public void find_findCategoryInDatabase_true() {
+    Category myCategory = new Category("Household chores");
+    myCategory.save();
+    Category savedCategory = Category.find(myCategory.getId());
+    assertTrue(myCategory.equals(savedCategory));
+  }
 }
