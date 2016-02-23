@@ -30,7 +30,8 @@ public class Task {
       return false;
     } else {
       Task newTask = (Task) otherTask;
-      return this.getDescription().equals(newTask.getDescription());
+      return this.getDescription().equals(newTask.getDescription()) &&
+             this.getId() == newTask.getId();
     }
   }
 
