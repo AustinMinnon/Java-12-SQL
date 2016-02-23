@@ -34,6 +34,12 @@ public class Task {
     }
   }
 
-
-
+  public void save() {
+    try(Connection con = DB.sql2o.open()) {
+      String sql = "INSERT INTO Tasks (description) VALUES (:description)";
+      con.createQuery(sql)
+        .addParameter("description", this.description)
+        .executeUpdate();
+    }
+  }
 }
